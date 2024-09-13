@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<HTML LANG="es" CLASS="flex flex-col items-center" STYLE="background: rgb(0, 23, 155)">
+<HEAD>
+    <META CHARSET="UTF-8">
+    <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
+    <LINK REL="stylesheet" HREF="/SWAG.CSS">
+    <TITLE>COCIDA</TITLE>
+</HEAD>
+
+
+<BODY CLASS="min-h-screen flex flex-col w-full max-w-2xl">
+
+    <DIV CLASS="w-full flex-grow">
+        <H1 CLASS="font-semibold text-6xl sm:text-8xl" STYLE="color:rgb(255, 0, 200);">COCIDA</H1>
+<P CLASS="text-2xl mb-2 font-serif text-right" STYLE="color:rgb(0, 238, 255)">estamos cocidos</P>
+
+
+<H2 CLASS="font-serif text-4xl sm:text-6xl text-wrap" STYLE="color:aqua">TU CARNÉ GUAY:</H2>
+<IMG ID="CARNE">
+
+    <H3 CLASS="font-serif text-6xl sm:text-8xl italic mb-8" STYLE="color:red">disfrútalo</H2>
+
+<A ID="DESCARGAR_GUAY" download="CARNÉ GUAY.PNG">
+    <P CLASS="underline text-xl font-mono CURSOR_CARGANDO" STYLE="color:aquamarine;">descargar</P>
+</A>
+
+<SCRIPT>
+    let imagen = localStorage.getItem("RESULTADO_GUAY");
+    document.getElementById('CARNE').src = imagen;
+    document.getElementById('DESCARGAR_GUAY').href = imagen;
+</SCRIPT>
+    </DIV>
+    <NAV CLASS="sticky bottom-2 w-full max-w-2xl p-4 border-4" STYLE="background-color: brown; border-style:ridge; border-color:gold;"> 
+        <P CLASS="underline font-serif text-white">PANEL DE FALSO CONTROL</P>
+        <P CLASS="underline font-serif" STYLE="color:greenyellow">ir a:</P>
+        <UL CLASS="flex flex-wrap justify-between gap-2">
+            <LI CLASS="flex-grow">
+                <A HREF="/CASA.HTML" CLASS="BOTON_NAV">CASA</A>
+            </LI>
+            <LI CLASS="flex-grow">
+                <A HREF="/COCIDAS.HTML" CLASS="BOTON_NAV">COCIDAS</A>
+            </LI> 
+            <LI CLASS="flex-grow" >
+                <A HREF="/CUECETE.HTML" CLASS="BOTON_NAV">CUÉCETE</A>
+            </LI>
+            <LI CLASS="flex-grow">
+                <A HREF="/ESTOYPERDIDO.HTML" CLASS="BOTON_NAV">ESTOY PERDIDO</A>
+            </LI>
+        </UL>
+    </NAV>
+</BODY>
