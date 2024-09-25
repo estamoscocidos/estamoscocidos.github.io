@@ -1,12 +1,12 @@
 <!DOCTYPE HTML>
-<HTML LANG="es" CLASS="flex flex-col items-center" STYLE="background: rgb(0, 23, 155)">
+<HTML LANG="es" CLASS="flex flex-col items-center" STYLE="background: darkorange">
 <HEAD>
     <META CHARSET="UTF-8">
     <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
     <LINK REL="stylesheet" HREF="/SWAG.CSS">
-    <TITLE>COCIDA.NET | Carné guay</TITLE>
+    <TITLE>COCIDA.NET | Arte emergente sevillano</TITLE>
     <META NAME="description" CONTENT="Cocida es una revista cultural y artística sevillana. Publicamos y promocionamos arte emergente" />
-    <LINK REL="canonical" HREF="/GUAY.HTML/"/>
+    <LINK REL="canonical" HREF="true"/>
     
         <META NAME="robots" CONTENT="index, follow"/>
     
@@ -35,102 +35,47 @@
 
     <DIV CLASS="w-full flex-grow">
         <A HREF="/CASA.HTML">
-    <H1 CLASS="font-semibold text-6xl sm:text-8xl" STYLE="color:rgb(255, 0, 200);">COCIDA</H1>
-    <P CLASS="text-2xl mb-2 font-serif text-right" STYLE="color:rgb(0, 238, 255)">lo que se cuece</P>    
+    <H1 CLASS="font-semibold text-6xl sm:text-8xl" STYLE="color:blue;">COCIDA</H1>
+    <P CLASS="text-2xl mb-2 font-serif text-right" STYLE="color:firebrick">lo que se cuece</P>
 </A>
 
-<SCRIPT>
-    function GET_LINES(ctx, text, maxWidth) {
-        var words = text.split(" ");
-        var lines = [];
-        var currentLine = words[0];
+<DIV CLASS="border-2 border-dashed p-4" STYLE="border-color: white;">
+    <H3 CLASS="text-6xl mb-4 CURSOR_AYUDA" STYLE="color:aqua;background-color: blue;">¿qué?</H3>
+    <P CLASS="text-2xl w-fit p-4 font-serif CURSOR_FLOR" STYLE="color:hotpink; background-color:saddlebrown">en cocida publicamos arte y cultura subterránea de sevilla y alrededores. 
+    <A HREF="/CUECETE.HTML" CLASS="underline" STYLE="color:yellow">¿haces algo? cuécete. te necesitamos.</A></P>
+</DIV>
+<MARQUEE CLASS="mt-4 font-serif text-2xl font-bold" STYLE="color:red">
+    <SPAN CLASS="mx-16">COCIDA ES UN MOVIMIENTO</SPAN>
+    <SPAN CLASS="mx-16">COCIDA ES UNA REVOLUCIÓN</SPAN>
+    <SPAN CLASS="mx-16">COCIDA ES INEVITABLE</SPAN>
+</MARQUEE>
+<P CLASS="text-5xl sm:text-7xl font-bold font-serif scale-y-50" STYLE="color:blue">BIENVENIDO. <A HREF="/COCIDAS.HTML" CLASS="underline CURSOR_OJOS" STYLE="color:yellow">VER COCIDAS.</A></P>
+<MARQUEE CLASS="mt-4 font-serif text-2xl font-bold" STYLE="color:magenta" DIRECTION="RIGHT">
+    <SPAN CLASS="mx-64"> </SPAN>
+    <SPAN CLASS="mx-16">PERO LO VAS A AGRADECER</SPAN>
+    <SPAN CLASS="mx-16">BUENO QUIZÁ ES FLIPARSE UN POCO</SPAN>
+    <SPAN CLASS="mx-16">TE VAMOS A CAMBIAR LA VIDA <IMG CLASS="inline w-3 mr-1" SRC="/ASSETS/IMG/ADVERTENCIA.GIF"><IMG CLASS="inline w-3 mr-1" SRC="/ASSETS/IMG/ADVERTENCIA.GIF"></SPAN>
+</MARQUEE>
 
-        for (var i = 1; i < words.length; i++) {
-            var word = words[i];
-            var width = ctx.measureText(currentLine + " " + word).width;
-            if (width < maxWidth) {
-                currentLine += " " + word;
-            } else {
-                lines.push(currentLine);
-                currentLine = word;
-            }
-        }
-        lines.push(currentLine);
-        return lines;
-    }
+<MARQUEE CLASS="mt-4 font-serif text-2xl font-bold CURSOR_PAZ" STYLE="color:blueviolet" BEHAVIOR="alternate" >
+    <SPAN CLASS="mx-64"> </SPAN>
+    <SPAN CLASS="mx-16">COCIDA NO ES POLÍTICO</SPAN>
+    <SPAN CLASS="mx-16">COCIDA ES PARA EL ARTE</SPAN>
+    <SPAN CLASS="mx-16">COCIDA ES PARA NOSOTROS</SPAN>
+</MARQUEE>
 
-
-    function GENERAR_CARNE() {
-        let canvas = document.getElementById('CANVAS_GUAY');
-        let ctx = canvas.getContext('2d');
-        let salsa = document.getElementById('SALSA').value;
-        ctx.filter = "hue-rotate(" + salsa + "deg) saturate(4)";
-        var fondo = new Image();
-        var cara = new Image();
-        fondo.src = "/ASSETS/IMG/CARNEGUAYFONDO.PNG";;
-        fondo.onload = function() {
-            ctx.drawImage(fondo, 0, 0);
-            cara.src = document.getElementById('VISTA_PREVIA').src;
-            cara.onload = function() {
-                ctx.drawImage(cara, 35, 58, 100, 100);
-
-                ctx.font = "22px serif";
-                ctx.fillStyle = "black";
-                let nombre = document.getElementById('NOMBRE').value;
-                let lineas = GET_LINES(ctx, nombre, 140);
-                for(let i = 0; i < lineas.length; ++i) {
-                    ctx.fillText(lineas[i], 146, 100 + i * 20, 140);
-                }
-
-                localStorage.setItem("RESULTADO_GUAY", canvas.toDataURL('image/png'));
-                window.location.href = "/RESULTADOGUAY.HTML";
-            }
-        }
-    }
-</SCRIPT>
-
-<H3 CLASS="text-4xl font-serif underline mb-4" STYLE="color:red">CONSIGUE TU CARNÉ DE GUAY</H3>
-<FORM ONSUBMIT="GENERAR_CARNE(); return false;">
-    <LABEL FOR="NOMBRE" CLASS="font-sans text-2xl" STYLE="color:rgb(51, 255, 0)">1. INTRODUCE TU NOMBRE COMPLETO:</LABEL> <BR>
-        <INPUT CLASS="CAMPO_TEXTO" TYPE="text" ID="NOMBRE" NAME="NOMBRE" MAXLENGTH="40" REQUIRED> 
-        <BR>
-        <LABEL FOR="CARA" CLASS="font-sans text-2xl" STYLE="color:rgb(51, 255, 0)">2. ESCOGE UNA FOTO DURA (cuadrada) DE TU CARA PARA EL CARNÉ:</LABEL>
-        <BR><BR>
-        <SCRIPT>
-            function MOSTRAR_SELECCION() {
-                let input = document.getElementById('CARA');
-                var archivo = input.files[0];
-                let vistaprev = document.getElementById('VISTA_PREVIA');
-                vistaprev.src = URL.createObjectURL(archivo);
-                vistaprev.parentElement.classList.remove('hidden');
-            }
-        
-        </SCRIPT>
-        <INPUT CLASS="BOTON w-full" TYPE="file" ID="CARA" NAME="CARA" ACCEPT="image/*" ONCHANGE="MOSTRAR_SELECCION();">
-        <DIV CLASS="hidden">
-            <P CLASS="text-2xl font-bold font-serif" STYLE="color:orangered;">tu cara:</P>
-            <IMG CLASS="border border-white aspect-square object-cover" ID="VISTA_PREVIA" WIDTH="200" HEIGHT="200">
-            <BR><BR>
-            <LABEL FOR="SALSA" CLASS="font-sans text-2xl" STYLE="color:rgb(51, 255, 0)">3. CANTIDAD DE SALSA:</LABEL>
-            <BR><BR>
-            <INPUT TYPE="range" ID="SALSA" NAME="SALSA" MIN="0" VALUE="0" MAX="360" CLASS="w-full DESLIZADOR slider-progress"/>
-            <BR><BR>
-            <INPUT TYPE="submit" VALUE="CONSEGUIR CARNÉ DE GUAY" CLASS="w-full text-center mb-16 BOTON font-serif font-bold text-xl sm:text-2xl CURSOR_CIENCIA" STYLE="color:red">
-        </DIV>
-</FORM>
-
-<SCRIPT>
-    for (let e of document.querySelectorAll('input[type="range"].slider-progress')) {
-        e.style.setProperty('--value', e.value);
-        e.style.setProperty('--min', e.min == '' ? '0' : e.min);
-        e.style.setProperty('--max', e.max == '' ? '100' : e.max);
-        e.addEventListener('input', () => e.style.setProperty('--value', e.value));
-    }
-</SCRIPT>
-<DIV CLASS="w-full flex justify-center hidden">
-    <CANVAS ID="CANVAS_GUAY" CLASS="mb-16" WIDTH="330" HEIGHT="208"></CANVAS>
+<DIV CLASS="p-4 border-2 mb-8" STYLE="background-color: rgba(255, 0, 242, 0.74);">
+    <H1 CLASS="text-4xl mt-6 font-serif font-bold CURSOR_AYUDA" STYLE="color:blue">Última cocida:</H1>
+    
+        <P CLASS="w-full text-center underline py-8 text-xl" STYLE="color: gold;">Las cocidas están por llegar, permanece alerta...</P>
+    
+</DIV>
 </DIV>
 
+<H2 CLASS="font-serif text-6xl" STYLE="color:aqua">TE CREES GUAY? NOSOTROS TAMBIÉN</H2>
+<A HREF="/GUAY.HTML" CLASS="mb-16">
+    <P CLASS="CURSOR_CIENCIA text-2xl font-sans underline" STYLE="color:brown">PINCHA AQUÍ PARA CONSEGUIR TU CARNÉ GUAY</P> 
+</A>
     </DIV>
     <NAV CLASS="sticky bottom-2 w-full max-w-2xl p-4 border-4" STYLE="background-color: brown; border-style:ridge; border-color:gold;"> 
         <P CLASS="underline font-serif text-white">PANEL DE FALSO CONTROL</P>
