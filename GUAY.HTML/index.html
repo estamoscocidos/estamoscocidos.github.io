@@ -66,6 +66,7 @@
         let canvas = document.getElementById('CANVAS_GUAY');
         let ctx = canvas.getContext('2d');
         let salsa = document.getElementById('SALSA').value;
+        salsa = ((salsa / 360 * 2.5) - Math.floor(salsa / 360 * 2.5)) * 360;
         ctx.filter = "hue-rotate(" + salsa + "deg) saturate(4)";
         var fondo = new Image();
         var cara = new Image();
